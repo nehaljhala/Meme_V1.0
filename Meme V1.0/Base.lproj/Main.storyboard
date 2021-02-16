@@ -69,30 +69,6 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncz-xL-nMh">
-                                        <rect key="frame" x="0.0" y="12" width="414" height="44"/>
-                                        <items>
-                                            <navigationItem id="Hc7-bi-IkH">
-                                                <barButtonItem key="leftBarButtonItem" id="ax0-7p-wUf">
-                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RHJ-GL-tco" userLabel="shareButton">
-                                                        <rect key="frame" x="20" y="11" width="19" height="22"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" image="square.and.arrow.up" catalog="system"/>
-                                                        <connections>
-                                                            <action selector="shareButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oux-Lo-a0i"/>
-                                                        </connections>
-                                                    </button>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" id="MtV-cp-mHG">
-                                                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dJV-sM-u7I">
-                                                        <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Cancel"/>
-                                                    </button>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JIB-Ob-Z6S">
                                         <rect key="frame" x="179" y="121" width="56" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,42 +79,70 @@
                                 <viewLayoutGuide key="safeArea" id="kJF-QG-yVQ"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ncz-xL-nMh" secondAttribute="trailing" id="3DY-Gt-OQw"/>
+                                    <constraint firstItem="UuB-fo-Qms" firstAttribute="centerX" secondItem="oCA-Bm-os8" secondAttribute="centerX" id="49W-Te-wlg"/>
                                     <constraint firstItem="O7Q-mo-RG4" firstAttribute="centerX" secondItem="duQ-HX-gVI" secondAttribute="centerX" id="8Bw-Ke-vWm"/>
-                                    <constraint firstItem="JIB-Ob-Z6S" firstAttribute="top" secondItem="ncz-xL-nMh" secondAttribute="bottom" constant="65" id="Ao5-JP-mie"/>
                                     <constraint firstItem="duQ-HX-gVI" firstAttribute="top" secondItem="UuB-fo-Qms" secondAttribute="bottom" constant="2" id="EGS-v6-Iwm"/>
-                                    <constraint firstItem="ncz-xL-nMh" firstAttribute="leading" secondItem="duQ-HX-gVI" secondAttribute="leading" id="HRQ-Jz-zDC"/>
                                     <constraint firstItem="JIB-Ob-Z6S" firstAttribute="centerX" secondItem="UuB-fo-Qms" secondAttribute="centerX" id="KgI-lk-dw8"/>
-                                    <constraint firstItem="UuB-fo-Qms" firstAttribute="top" secondItem="ncz-xL-nMh" secondAttribute="bottom" constant="23" id="T7e-bJ-SKs"/>
                                     <constraint firstItem="duQ-HX-gVI" firstAttribute="top" secondItem="O7Q-mo-RG4" secondAttribute="bottom" constant="28" id="XQZ-IJ-Sti"/>
                                     <constraint firstItem="UuB-fo-Qms" firstAttribute="leading" secondItem="kJF-QG-yVQ" secondAttribute="leading" constant="12" id="dF0-XY-jx6"/>
-                                    <constraint firstItem="ncz-xL-nMh" firstAttribute="top" secondItem="oCA-Bm-os8" secondAttribute="top" constant="12" id="e1p-gp-hTX"/>
                                     <constraint firstItem="duQ-HX-gVI" firstAttribute="bottom" secondItem="oCA-Bm-os8" secondAttribute="bottomMargin" id="eHT-rc-beX"/>
-                                    <constraint firstItem="ncz-xL-nMh" firstAttribute="trailing" secondItem="duQ-HX-gVI" secondAttribute="trailing" id="i6f-Mh-JmF"/>
-                                    <constraint firstItem="ncz-xL-nMh" firstAttribute="leading" secondItem="oCA-Bm-os8" secondAttribute="leading" id="oe9-ov-I3P"/>
-                                    <constraint firstItem="JIB-Ob-Z6S" firstAttribute="centerX" secondItem="ncz-xL-nMh" secondAttribute="centerX" id="pEu-Er-BUy"/>
+                                    <constraint firstItem="JIB-Ob-Z6S" firstAttribute="top" secondItem="kJF-QG-yVQ" secondAttribute="top" constant="77" id="euh-tA-kNY"/>
+                                    <constraint firstItem="UuB-fo-Qms" firstAttribute="centerX" secondItem="duQ-HX-gVI" secondAttribute="centerX" id="gBx-g4-uKL"/>
+                                    <constraint firstItem="JIB-Ob-Z6S" firstAttribute="centerX" secondItem="duQ-HX-gVI" secondAttribute="centerX" id="jav-wS-eG5"/>
+                                    <constraint firstItem="duQ-HX-gVI" firstAttribute="leading" secondItem="oCA-Bm-os8" secondAttribute="leading" id="jrZ-zZ-5Em"/>
+                                    <constraint firstItem="UuB-fo-Qms" firstAttribute="top" secondItem="kJF-QG-yVQ" secondAttribute="top" constant="35" id="sDZ-lI-3il"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nlh-Xa-0i9" userLabel="topToolbar">
+                                <rect key="frame" x="0.0" y="15" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="Fsl-Qd-AYZ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lok-Wc-HmC" userLabel="ShareImageButton">
+                                            <rect key="frame" x="20" y="11" width="19" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                            <connections>
+                                                <action selector="shareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fcm-g6-GeP"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem id="6r5-hq-JuW"/>
+                                    <barButtonItem style="plain" id="C6K-J6-KmN">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="add-Ii-gCe">
+                                            <rect key="frame" x="321" y="3.5" width="93" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Cancel"/>
+                                            <connections>
+                                                <action selector="cancelSelection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oof-UJ-7GF"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R2S-tb-uyx" firstAttribute="centerX" secondItem="oCA-Bm-os8" secondAttribute="centerX" id="Bgs-2k-AI1"/>
                             <constraint firstItem="R2S-tb-uyx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="JrA-ne-Krq"/>
+                            <constraint firstItem="Nlh-Xa-0i9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PUL-8c-Og0"/>
+                            <constraint firstItem="Nlh-Xa-0i9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TJ6-of-ZYl"/>
                             <constraint firstItem="R2S-tb-uyx" firstAttribute="leading" secondItem="aPU-wK-uvc" secondAttribute="leading" id="f51-Xa-PaC"/>
                             <constraint firstItem="R2S-tb-uyx" firstAttribute="trailing" secondItem="aPU-wK-uvc" secondAttribute="trailing" id="gEP-cD-h6v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aPU-wK-uvc" secondAttribute="bottom" constant="152" id="ie0-mo-n5u"/>
+                            <constraint firstItem="Nlh-Xa-0i9" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="lfd-i4-UWI"/>
                             <constraint firstItem="R2S-tb-uyx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="ojf-rC-bwd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="BottomTextField" destination="O7Q-mo-RG4" id="1PJ-14-OuD"/>
+                        <outlet property="Cancel" destination="add-Ii-gCe" id="N3a-c5-PPa"/>
                         <outlet property="ImagePickerView" destination="UuB-fo-Qms" id="n99-DN-N3M"/>
                         <outlet property="TopTextField" destination="JIB-Ob-Z6S" id="OLy-Er-fKh"/>
                         <outlet property="cameraButtonOutlet" destination="Yew-hE-bhq" id="5z3-hT-U28"/>
-                        <outlet property="cancelButton" destination="dJV-sM-u7I" id="iy6-k7-QNU"/>
-                        <outlet property="navBar" destination="Hc7-bi-IkH" id="x0d-f4-9WA"/>
+                        <outlet property="shareButton" destination="lok-Wc-HmC" id="01W-Ud-SVN"/>
                         <outlet property="toolBar" destination="duQ-HX-gVI" id="dQv-qO-EYn"/>
+                        <outlet property="topToolBar" destination="Nlh-Xa-0i9" id="Z7P-OU-WdV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
