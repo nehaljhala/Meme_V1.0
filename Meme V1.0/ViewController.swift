@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var TopTextField: UITextField!
     @IBOutlet weak var BottomTextField: UITextField!
     @IBOutlet weak var ImagePickerView: UIImageView!
-    @IBOutlet weak var CancelButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var cameraButtonOutlet: UIButton!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -106,10 +106,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     
     //pick image from album
     @IBAction func AlbumButton(_ sender: Any) {
+        print("albumbutton \n\n\n")
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
+        print("albumbutton \n\n\n")
         present(imagePicker, animated: true, completion: nil)
+        print("albumbutton \n\n\n")
     }
     func isCameraAvailable() -> Bool{
         return UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -158,10 +161,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     
     //Activity viewcontroller to share the meme
     
+    
+    
     @IBAction func shareButton(_ sender: Any) {
-        
+        print ("share button \n\n\n")
         let image = save()
+        
         let controller = UIActivityViewController(activityItems: [image.memedImage], applicationActivities: nil)
+        controller.completionWithItemsHandler = {
+            activity, completed, items, error in if completed {
+                image.memedImage
+                self.dismiss(animated: true, completion: nil) } }
         self.present(controller, animated: true, completion: nil)
         
     }
