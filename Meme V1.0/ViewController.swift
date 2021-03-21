@@ -28,6 +28,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         setupTextField(tf: topTextField, text: "TOP")
         setupTextField(tf: bottomTextField, text: "BOTTOM")
+        print("view controller loaded")
     }
     
     //Setting the Textfields
@@ -152,6 +153,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
             bottomText: bottomTextField.text!,
             originalImage: imagePickerView.image!,
             memedImage: generateMemedImage())
+        
+        let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(myImage)
         return myImage
     }
     func generateMemedImage() -> UIImage {
