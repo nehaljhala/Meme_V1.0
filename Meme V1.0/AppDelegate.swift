@@ -6,14 +6,13 @@
 //
 
 import UIKit
-
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
 
     var memes = [Meme]()
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        print ("sucks but loads")
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?=nil) -> Bool {
         return true
     }
 
@@ -27,5 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print ("sucks but loads")
 
     }
+
 }
+
 

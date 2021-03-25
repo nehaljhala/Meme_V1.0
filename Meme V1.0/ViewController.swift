@@ -11,16 +11,21 @@ struct Meme {
     var bottomText: String
     var originalImage: UIImage
     var memedImage: UIImage
+    
 }
+var meme:Meme?
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate, UITextFieldDelegate  {
+    
+    
     
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imagePickerView: UIImageView!
-    @IBOutlet weak var topToolBar: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var cameraButtonOutlet: UIButton!
-    @IBOutlet weak var Cancel: UIButton!
+    @IBOutlet weak var Cancel: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
@@ -73,6 +78,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func cancelSelection(_ sender: Any) {
         shareButton.isEnabled = false
         imagePickerView.image = nil
+        dismiss(animated: true, completion:nil)
+        navigationController?.popViewController(animated: true)
+        
     }
     
     // Keyboard settings
@@ -134,12 +142,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
 
     // Tells the delegate that the user picked a still image or movie.
     func imagePickerController(_: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        print(info)
         let _: UIImagePickerController.InfoKey
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         imagePickerView.image = image
-        dismiss(animated: true, completion: nil)
         shareButton.isEnabled = true
+        dismiss(animated: true, completion: nil)
     }
     
     // Tells the delegate that the user cancelled the pick operation
@@ -148,21 +155,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     // Generate a meme image
-    func save()-> Meme {
-        let myImage = Meme(topText: topTextField.text!,
+    func save(){
+        let meme = Meme(topText: topTextField.text!,
             bottomText: bottomTextField.text!,
             originalImage: imagePickerView.image!,
             memedImage: generateMemedImage())
         
         let object = UIApplication.shared.delegate
-            let appDelegate = object as! AppDelegate
-            appDelegate.memes.append(myImage)
-        return myImage
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        print("save memecount: \(appDelegate.memes.count)")
+        dismiss(animated: true, completion: nil)
     }
     func generateMemedImage() -> UIImage {
         
         // Hide ToolBar and NavBar
-        topToolBar.isHidden = true
+        navBar.isHidden = true
         toolBar.isHidden = true
      
         // Render view to an image
@@ -172,7 +180,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         UIGraphicsEndImageContext()
         
         // Show ToolBar and Navbar
-        topToolBar.isHidden = false
+        navBar.isHidden = false
         toolBar.isHidden = false
         return memedImage
     }
@@ -181,13 +189,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func shareImage(_ sender: Any) {
         let image = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(controller,animated: true, completion: nil)
         controller.completionWithItemsHandler = {
             (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
             if completed && error == nil {
                 self.save()
             }
         }
-        present(controller,animated: true, completion: nil)
     }
 }
 
