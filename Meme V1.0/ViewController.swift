@@ -1,4 +1,3 @@
-
 //  ViewController.swift
 //  Meme V1.0
 //  Created by Nehal Jhala on 2/2/21.
@@ -6,39 +5,32 @@
 import UIKit
 
 // Create the meme
-struct Meme {
-    var topText: String
-    var bottomText: String
-    var originalImage: UIImage
-    var memedImage: UIImage
-    
-}
 var meme:Meme?
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
-                      UINavigationControllerDelegate, UITextFieldDelegate  {
+                      UINavigationControllerDelegate, UITextFieldDelegate {
     
     
-    
+    @IBOutlet weak var imagePickerView: UIImageView!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var navBar: UINavigationBar!
-    @IBOutlet weak var cameraButtonOutlet: UIButton!
-    @IBOutlet weak var Cancel: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField(tf: topTextField, text: "TOP")
         setupTextField(tf: bottomTextField, text: "BOTTOM")
         print("view controller loaded")
+        tabBarController?.tabBar.isHidden = true
     }
     
     //Setting the Textfields
     func setupTextField(tf: UITextField, text: String) {
-    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
@@ -50,9 +42,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         tf.textAlignment = .center
         tf.text = text
         tf.delegate = self
-        Cancel.isEnabled = true
-        shareButton.isEnabled = false
+        //Cancel.isEnabled = true
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField){
         if textField == topTextField && topTextField.text == "TOP"{
             topTextField.text = ""
@@ -76,18 +68,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
     
     // Cancel the selection
     @IBAction func cancelSelection(_ sender: Any) {
+    
         shareButton.isEnabled = false
         imagePickerView.image = nil
         dismiss(animated: true, completion:nil)
         navigationController?.popViewController(animated: true)
-        
     }
     
     // Keyboard settings
     override func viewWillAppear(_ animated: Bool) {
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera  )
+        shareButton.isEnabled = false
         super.viewWillAppear(animated)
-        cameraButtonOutlet.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera  )
         subscribeToKeyboardNotifications()
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -125,13 +119,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
+    
     @IBAction func cameraButton(_ sender: Any) {
-      if !isCameraAvailable() {
+        if !isCameraAvailable() {
             return
-    }
+        }
         chooseImageFromPhotoOrCamera(source:.camera)
+        
     }
-    @IBAction func AlbumButton(_ sender: Any) {
+        
+    @IBAction func albumButton(_ sender: Any) {
         chooseImageFromPhotoOrCamera(source:.photoLibrary)
     }
     

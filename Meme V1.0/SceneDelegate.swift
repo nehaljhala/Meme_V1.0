@@ -1,9 +1,8 @@
 //
 //  SceneDelegate.swift
 //  Meme V1.0
-//
 //  Created by Nehal Jhala on 3/22/21.
-//
+
 
 import UIKit
 
