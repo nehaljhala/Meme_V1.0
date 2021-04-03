@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eOD-Pa-c5J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPc-3d-dSK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -182,22 +182,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-y8-Q6i">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="632"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANc-xD-gEd" userLabel="Top Text Field">
-                                <rect key="frame" x="-25" y="113" width="414" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I2Q-ij-iW5" userLabel="Bottom Text Field">
-                                <rect key="frame" x="25" y="793" width="364" height="34"/>
+                                <rect key="frame" x="25" y="705" width="364" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5W-Ii-AvP">
-                                <rect key="frame" x="0.0" y="40" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="PXY-dV-9qB">
+                                    <navigationItem id="PXY-dV-9qB">
                                         <barButtonItem key="leftBarButtonItem" title="Share" image="square.and.arrow.up" catalog="system" id="ML4-Tf-IuJ">
                                             <connections>
                                                 <action selector="shareImage:" destination="eOD-Pa-c5J" id="CyX-LO-fq4"/>
@@ -212,7 +207,7 @@
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDX-1M-J10">
-                                <rect key="frame" x="0.0" y="847" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="0gx-eT-PaW">
                                         <connections>
@@ -226,27 +221,31 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ANc-xD-gEd" userLabel="Top Text Field">
+                                <rect key="frame" x="20" y="113" width="369" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LXd-oX-hC0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LXd-oX-hC0" firstAttribute="trailing" secondItem="I2Q-ij-iW5" secondAttribute="trailing" constant="25" id="0pz-us-Crt"/>
-                            <constraint firstItem="tJS-y8-Q6i" firstAttribute="bottom" secondItem="LXd-oX-hC0" secondAttribute="bottom" id="15a-Cj-u4e"/>
-                            <constraint firstItem="I2Q-ij-iW5" firstAttribute="leading" secondItem="LXd-oX-hC0" secondAttribute="leading" constant="25" id="3pv-ga-gv5"/>
-                            <constraint firstItem="RDX-1M-J10" firstAttribute="top" secondItem="I2Q-ij-iW5" secondAttribute="bottom" constant="20" id="FC8-fR-xPR"/>
-                            <constraint firstItem="LXd-oX-hC0" firstAttribute="leading" secondItem="ANc-xD-gEd" secondAttribute="leading" constant="25" id="GGJ-Qb-sOn"/>
-                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="leading" secondItem="LXd-oX-hC0" secondAttribute="leading" id="Lm9-X5-E1g"/>
-                            <constraint firstAttribute="bottom" secondItem="RDX-1M-J10" secondAttribute="bottom" id="Vao-w6-TnR"/>
-                            <constraint firstItem="RDX-1M-J10" firstAttribute="leading" secondItem="ZdU-vV-RgR" secondAttribute="leading" id="a5E-v3-JjG"/>
-                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="top" secondItem="ZdU-vV-RgR" secondAttribute="top" constant="40" id="bCK-WF-Bzy"/>
+                            <constraint firstItem="I2Q-ij-iW5" firstAttribute="trailing" secondItem="tJS-y8-Q6i" secondAttribute="trailing" constant="-25" id="0pz-us-Crt"/>
+                            <constraint firstItem="tJS-y8-Q6i" firstAttribute="bottom" secondItem="RDX-1M-J10" secondAttribute="top" symbolic="YES" id="15a-Cj-u4e"/>
+                            <constraint firstItem="I2Q-ij-iW5" firstAttribute="leading" secondItem="tJS-y8-Q6i" secondAttribute="leading" constant="25" id="3pv-ga-gv5"/>
+                            <constraint firstItem="RDX-1M-J10" firstAttribute="bottom" secondItem="LXd-oX-hC0" secondAttribute="bottom" id="9ZD-4D-Rgx"/>
+                            <constraint firstItem="RDX-1M-J10" firstAttribute="leading" secondItem="LXd-oX-hC0" secondAttribute="leading" id="Ewe-T5-jws"/>
+                            <constraint firstItem="I2Q-ij-iW5" firstAttribute="bottom" secondItem="tJS-y8-Q6i" secondAttribute="bottom" constant="-25" id="FC8-fR-xPR"/>
+                            <constraint firstItem="ANc-xD-gEd" firstAttribute="leading" secondItem="tJS-y8-Q6i" secondAttribute="leading" constant="25" id="GGJ-Qb-sOn"/>
+                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="top" secondItem="LXd-oX-hC0" secondAttribute="top" id="IkK-Mg-osu"/>
+                            <constraint firstItem="RDX-1M-J10" firstAttribute="trailing" secondItem="LXd-oX-hC0" secondAttribute="trailing" id="OJ7-QO-v2x"/>
                             <constraint firstItem="tJS-y8-Q6i" firstAttribute="trailing" secondItem="LXd-oX-hC0" secondAttribute="trailing" id="bFJ-oc-hre"/>
-                            <constraint firstItem="ANc-xD-gEd" firstAttribute="top" secondItem="m5W-Ii-AvP" secondAttribute="bottom" constant="25" id="c5m-bm-wAu"/>
-                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="trailing" secondItem="LXd-oX-hC0" secondAttribute="trailing" id="cEZ-JL-Xqf"/>
-                            <constraint firstItem="tJS-y8-Q6i" firstAttribute="top" secondItem="m5W-Ii-AvP" secondAttribute="bottom" id="dYG-wc-XBu"/>
-                            <constraint firstItem="tJS-y8-Q6i" firstAttribute="top" secondItem="LXd-oX-hC0" secondAttribute="top" id="ejv-4A-4T3"/>
-                            <constraint firstItem="LXd-oX-hC0" firstAttribute="trailing" secondItem="ANc-xD-gEd" secondAttribute="trailing" constant="25" id="f9M-Yi-Hbd"/>
-                            <constraint firstAttribute="trailing" secondItem="RDX-1M-J10" secondAttribute="trailing" id="j7c-47-Gkn"/>
+                            <constraint firstItem="ANc-xD-gEd" firstAttribute="top" secondItem="tJS-y8-Q6i" secondAttribute="top" constant="25" id="c5m-bm-wAu"/>
+                            <constraint firstItem="tJS-y8-Q6i" firstAttribute="top" secondItem="m5W-Ii-AvP" secondAttribute="bottom" id="ejv-4A-4T3"/>
+                            <constraint firstItem="ANc-xD-gEd" firstAttribute="trailing" secondItem="tJS-y8-Q6i" secondAttribute="trailing" constant="-25" id="f9M-Yi-Hbd"/>
                             <constraint firstItem="tJS-y8-Q6i" firstAttribute="leading" secondItem="LXd-oX-hC0" secondAttribute="leading" id="p5L-un-T0h"/>
+                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="trailing" secondItem="LXd-oX-hC0" secondAttribute="trailing" id="tlP-fG-4GV"/>
+                            <constraint firstItem="m5W-Ii-AvP" firstAttribute="leading" secondItem="LXd-oX-hC0" secondAttribute="leading" id="xL2-Ou-egf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="nPX-89-eWe"/>
@@ -263,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tw-bg-iyc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152.1739130434783" y="343.52678571428572"/>
+            <point key="canvasLocation" x="-686" y="207"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
