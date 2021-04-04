@@ -38,6 +38,7 @@ class SentCollectionViewController:UICollectionViewController,UICollectionViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear (animated)
         collectionView!.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: Collection View Data Source
@@ -61,5 +62,14 @@ class SentCollectionViewController:UICollectionViewController,UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(identifier: "MemesDetailViewController") as!MemesDetailViewController
+        detailController.m_image = memes[indexPath.row].memedImage
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+    }
+    
+    
 }
 

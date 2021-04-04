@@ -22,7 +22,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBOutlet weak var tableView: UITableView!
+    
     var memes: [Meme]! {
+        
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
@@ -38,13 +40,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillAppear(animated)
         tableView.reloadData()
         tabBarController?.tabBar.isHidden = false
-
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
-  }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemesDetailViewController") as! MemesDetailViewController
+        detailController.m_image = memes[indexPath.row].memedImage
+        print(indexPath)
+        self.navigationController!.pushViewController(detailController, animated: true)
+    }
     
 }
 
 
 
- 
+
