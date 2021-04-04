@@ -32,7 +32,6 @@ class SentCollectionViewController:UICollectionViewController,UICollectionViewDe
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: w, height: w)
-        print(flowLayout.itemSize)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +54,6 @@ class SentCollectionViewController:UICollectionViewController,UICollectionViewDe
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "meme.MemesCollectionViewCell", for: indexPath) as! MemesCollectionViewCell
         let memeForCell = memes[indexPath.row]
         cell.MemesImageView.image = memeForCell.memedImage
-        print("entering cellforitemat4")
         return cell
     }
     

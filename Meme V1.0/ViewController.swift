@@ -24,7 +24,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         setupTextField(tf: topTextField, text: "TOP")
         setupTextField(tf: bottomTextField, text: "BOTTOM")
-        print("view controller loaded")
         tabBarController?.tabBar.isHidden = true
     }
     
@@ -42,7 +41,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         tf.textAlignment = .center
         tf.text = text
         tf.delegate = self
-        //Cancel.isEnabled = true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField){
@@ -161,7 +159,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
-        print("save memecount: \(appDelegate.memes.count)")
         dismiss(animated: true, completion: nil)
     }
     func generateMemedImage() -> UIImage {

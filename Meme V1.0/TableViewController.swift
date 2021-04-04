@@ -32,9 +32,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("tableviewcell is loading")
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -46,7 +45,6 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemesDetailViewController") as! MemesDetailViewController
         detailController.m_image = memes[indexPath.row].memedImage
-        print(indexPath)
         self.navigationController!.pushViewController(detailController, animated: true)
     }
     
